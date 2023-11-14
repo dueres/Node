@@ -1,0 +1,43 @@
+{
+  "programmers": [
+    {
+      "category": "Implementing Version Control",
+      "title": "Implement the logic and prepare for presentation soon kindly",
+      "imageUrl": "https://i0.wp.com/hackersploit.org/wp-content/uploads/2022/05/Blue-Team-Series.jpg?w=662&ssl=1",
+      "body": "All the best",
+      "assignedUser": "Bob Johnson",
+      "date": "2023-11-09T21:00:30.190Z",
+      "id": 2
+    },
+    {
+      "category": "Software Testing and Quality Assurance",
+      "title": "Finance coding",
+      "imageUrl": "https://1517081779-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-L_2uGJGU7AVNRcqRvEi%2Fuploads%2FZgebWbEtK8XGTkJY4hEc%2Fhacktricks.gif?alt=media&token=ce491298-809a-41c0-b094-cf93afdb85cb",
+      "body": "Jane Smith Under Finance ",
+      "assignedUser": "Jane Smith",
+      "assignedDepartment": "Finance",
+      "date": "2023-11-13T05:52:11.878Z",
+      "id": 5
+    },
+    {
+      "category": "Code Review and Collaboration Meetings",
+      "title": "create a segment tree",
+      "imageUrl": "https://github.com/kdn251/interviews/blob/master/images/segmentTree.png?raw=true",
+      "body": "a tree data structure for storing intervals, or segments.",
+      "assignedUser": "Bob Johnson",
+      "assignedDepartment": "IT",
+      "date": "2023-11-13T05:56:53.621Z",
+      "id": 3
+    },
+    {
+      "category": "Researching and Adopting New Technologies",
+      "title": "Merge sort final testing phase",
+      "imageUrl": "https://github.com/kdn251/interviews/blob/master/images/mergesort.gif?raw=true",
+      "body": "Mergesort is also a divide and conquer algorithm",
+      "assignedUser": "John Doe",
+      "assignedDepartment": "New department",
+      "date": "2023-11-13T06:03:25.686Z",
+      "id": 4
+    }
+  ]
+}

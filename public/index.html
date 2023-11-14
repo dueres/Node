@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charishma</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active" > <span style="text-shadow: 10px;font-weight: 900;">Charishma.com</span></a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#project">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#blog">Blog</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!--card layout start-->
+    <div class="container">
+      <div class="row-grid">    
+        <div class="card-grd">
+          <h2>Charishma Is Here To Help &nbsp;</h2>
+          <div class="button-container">
+              <button class="red-button">Read More...</button>
+          </div>
+      </div>
+        <div class="card-grid bk">
+          <img src="./images/stud.jpg" alt="student Picture" width="440px">
+        </div>
+      </div>
+    <h2 id="about" >About</h2>
+    <div class="row">    
+      <div class="card-03">
+        <p>
+          With 3+ years of experience in the industry, I've had the privilege of collaborating with a diverse range of clients, 
+          from startups to established brands. My expertise in responsive design ensures that your website will shine on every device, 
+          leaving no visitor behind. Plus, I keep a keen eye on emerging design trends and technologies to keep your digital presence fresh and engaging.
+        </p>
+      </div>
+    </div>
+    <h2 id="education">Education</h2>
+    <div class="row">  
+        <div class="card-02">
+          <h2>
+            Description of my education Journey
+          </h2>
+        </div>
+        <div class="card-02">
+         <p>
+          I hold a Masters Degree In Computer Science fron the University of Haven and Bachelor's Degree in Computer Science from 
+          The Bharath University. My academic journey equipped me with a strong foundation in web Development, 
+          which I've seamlessly integrated into my web design career.
+         </p>
+        </div>
+    </div>
+    
+      <h2 id="project">Projects</h2>
+      <div class="row">   
+        <div class="card-01">
+            <i class="fab fa-android"></i>
+            <p>Android Dev</p>
+        </div>
+        <div class="card-01">
+            <i class="fas fa-laptop"></i>
+            <p>Internet Of Things</p>
+        </div>
+        <div class="card-01">
+            <i class="fas fa-server"></i>
+            <p>Networking</p>
+        </div>
+      </div>
+
+      <h2 id="experience" >Experience</h2>
+      <div class="row">    
+        <div class="card-03">
+          <p>
+            Throughout my career, I've honed my skills in responsive design, user experience optimization, and the latest design trends. 
+            I take pride in my ability to blend creativity with functionality, delivering websites that not only captivate but also convert 
+            visitors into loyal customers.
+          </p>
+        </div>
+      </div>
+      <!-- Add a new row using CSS Grid -->
+      <h2 id="blog">Blogs</h2>
+      <div class="row-grid">
+          <div class="card-grids">
+              <h3>Digital Design Dedication</h3>
+              <p class="blog-date">22nd September, 2023</p>
+              <p class="blog-content">
+                  I'm passionate about the digital world and committed to staying at the forefront of design innovations. 
+                  My journey as a web designer has been marked by continuous growth and a deep dedication to creating exceptional online experiences.
+              </p>
+          </div>
+          <div class="card-grids">
+              <h3>The Art of Debugging</h3>
+              <p class="blog-date">22nd July, 2023</p>
+              <p class="blog-content">
+                  Debugging is an essential skill for every computer scientist. This blog post provides valuable tips and techniques 
+                  to help you become a more efficient and effective debugger, whether you're a novice or an experienced coder.
+              </p>
+          </div>
+          <div class="card-grids">
+              <h3>Synergy of IOT and Cloud Computing</h3>
+              <p class="blog-date">12th May, 2023</p>
+              <p class="blog-content">
+                  The Internet of Things (IoT) and cloud computing are two technological juggernauts reshaping the digital world. 
+                  IoT connects everyday objects to the internet, while cloud computing provides scalable, on-demand resources for data processing and storage. 
+                  Together, they create a powerful synergy.
+              </p>
+          </div>
+      </div>
+
+    </div>
+    <footer>
+      <div class="social-icons">
+        <a href="your-facebook-url" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="your-twitter-url" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="your-linkedin-url" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="your-github-url" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+      <hr>
+      <div class="copyright">
+          <h2> &copy; 2023 Charishma.com</h2>
+      </div>
+  </footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+  </body>
+</html>
+      

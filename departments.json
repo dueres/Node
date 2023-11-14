@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Engineering",
+    "location": "Building A",
+    "head": "John Smith"
+  },
+  {
+    "id": 2,
+    "name": "Marketing",
+    "location": "Building B",
+    "head": "Jane Doe"
+  },
+  {
+    "id": 3,
+    "name": "Finance",
+    "location": "Building C",
+    "head": "Bob Johnson"
+  },
+  {
+    "departmentName": "IT",
+    "location": "IT",
+    "id": 4
+  },
+  {
+    "departmentName": "Building de",
+    "location": "Building de",
+    "id": 5
+  },
+  {
+    "departmentName": "New department",
+    "location": "This is a new department",
+    "id": 6
+  }
+]
