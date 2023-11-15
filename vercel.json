@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "app.js", "use": "@now/node" }
-  ],
   "routes": [
     { "src": "/api/(.*)", "dest": "server/app.js" }
   ]
