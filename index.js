@@ -1,13 +1,13 @@
+// index.js
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-
-const app = express();
 const path = require('path');
 
-app.use(bodyParser.json());
+const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
 
 // Enabling cors
 app.use((req, res, next) => {
@@ -17,126 +17,80 @@ app.use((req, res, next) => {
   next();
 });
 
-
 // API endpoints for users
 const usersDataFile = './data/users.json';
 
 app.get('/api/users', (req, res) => {
-  fs.readFile(usersDataFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading users data file:', err);
-      return res.status(500).send('Server error');
-    }
-
-    const users = JSON.parse(data);
-    res.json(users);
-  });
+  const users = require(usersDataFile);
+  res.json(users);
 });
 
 app.post('/api/users', (req, res) => {
   const newUser = req.body;
 
-  fs.readFile(usersDataFile, 'utf8', (err, data) => {
+  const users = require(usersDataFile);
+  newUser.id = users.length + 1;
+
+  users.push(newUser);
+
+  fs.writeFile(usersDataFile, JSON.stringify(users, null, 2), (err) => {
     if (err) {
-      console.error('Error reading users data file:', err);
+      console.error('Error writing users data file:', err);
       return res.status(500).send('Server error');
     }
 
-    let users = JSON.parse(data);
-    newUser.id = users.length + 1;
-
-    users.push(newUser);
-
-    fs.writeFile(usersDataFile, JSON.stringify(users, null, 2), (err) => {
-      if (err) {
-        console.error('Error writing users data file:', err);
-        return res.status(500).send('Server error');
-      }
-
-      res.json(newUser);
-    });
+    res.json(newUser);
   });
 });
 
 // JSON file to store programmers data data
-const programmersdataFile = './data/programmers.json';
+const programmersDataFile = './data/programmers.json';
 
 // API endpoints for programmers
 app.get('/api/programmersresource', (req, res) => {
-  fs.readFile(programmersdataFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading data file:', err);
-      return res.status(500).send('Server error');
-    }
-
-    const programmers = JSON.parse(data);
-    res.json(programmers);
-  });
+  const programmers = require(programmersDataFile);
+  res.json(programmers);
 });
-
 
 app.post('/api/programmersresource', (req, res) => {
   const newAssignment = req.body;
-  // Read data from the JSON file
-  fs.readFile(programmersdataFile, 'utf8', (err, data) => {
+
+  const programmers = require(programmersDataFile);
+  newAssignment.id = programmers.programmers.length + 1;
+  programmers.programmers.push(newAssignment);
+
+  fs.writeFile(programmersDataFile, JSON.stringify(programmers, null, 2), (err) => {
     if (err) {
-      console.error('Error reading data file:', err);
+      console.error('Error writing data file:', err);
       return res.status(500).send('Server error');
     }
 
-    const programmers = JSON.parse(data);
-    newAssignment.id = programmers.programmers.length + 1;
-    programmers.programmers.push(newAssignment);
-
-    // Write updated data back to the JSON file
-    fs.writeFile(programmersdataFile, JSON.stringify(programmers, null, 2), (err) => {
-      if (err) {
-        console.error('Error writing data file:', err);
-        return res.status(500).send('Server error');
-      }
-
-      res.json(newAssignment);
-    });
+    res.json(newAssignment);
   });
 });
-
 
 // API endpoints for departments
 const departmentsDataFile = './data/departments.json';
 
 app.get('/api/departments', (req, res) => {
-  fs.readFile(departmentsDataFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading departments data file:', err);
-      return res.status(500).send('Server error');
-    }
-
-    const departments = JSON.parse(data);
-    res.json(departments);
-  });
+  const departments = require(departmentsDataFile);
+  res.json(departments);
 });
 
 app.post('/api/departments', (req, res) => {
   const newDepartment = req.body;
 
-  fs.readFile(departmentsDataFile, 'utf8', (err, data) => {
+  const departments = require(departmentsDataFile);
+  newDepartment.id = departments.length + 1;
+  departments.push(newDepartment);
+
+  fs.writeFile(departmentsDataFile, JSON.stringify(departments, null, 2), (err) => {
     if (err) {
-      console.error('Error reading departments data file:', err);
+      console.error('Error writing departments data file:', err);
       return res.status(500).send('Server error');
     }
 
-    const departments = JSON.parse(data);
-    newDepartment.id = departments.length + 1;
-    departments.push(newDepartment);
-
-    fs.writeFile(departmentsDataFile, JSON.stringify(departments, null, 2), (err) => {
-      if (err) {
-        console.error('Error writing departments data file:', err);
-        return res.status(500).send('Server error');
-      }
-
-      res.json(newDepartment);
-    });
+    res.json(newDepartment);
   });
 });
 
@@ -145,9 +99,15 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
-
 // Starting the server
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log('App listening on port 3000!');
-// });
+app.listen(process.env.PORT || 3000, () => {
+  console.log('App listening on port 3000!');
+});
+
+// Check Node.js version
+const requiredNodeVersion = '12.0.0';
+
+if (parseFloat(process.version.slice(1)) < parseFloat(requiredNodeVersion)) {
+  console.error(`Node.js version ${requiredNodeVersion} or higher is required.`);
+  process.exit(1);
+}
