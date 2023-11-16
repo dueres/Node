@@ -2,11 +2,7 @@
   "version": 2,
   "builds": [{ "src": "index.js", "use": "@now/node" }],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/index.js",
-      "methods": ["GET", "POST"]
-    },
+    { "src": "/api/(.*)", "dest": "/index.js" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.js" }
   ]
