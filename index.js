@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 
 
 // API endpoints for users
-const usersDataFile = 'users.json';
+const usersDataFile = './data/users.json';
 
 app.get('/api/users', (req, res) => {
   fs.readFile(usersDataFile, 'utf8', (err, data) => {
@@ -59,7 +59,7 @@ app.post('/api/users', (req, res) => {
 });
 
 // JSON file to store programmers data data
-const programmersdataFile = 'programmers.json'; 
+const programmersdataFile = './data/programmers.json';
 
 // API endpoints for programmers
 app.get('/api/programmersresource', (req, res) => {
@@ -102,7 +102,7 @@ app.post('/api/programmersresource', (req, res) => {
 
 
 // API endpoints for departments
-const departmentsDataFile = 'departments.json';
+const departmentsDataFile = './data/departments.json';
 
 app.get('/api/departments', (req, res) => {
   fs.readFile(departmentsDataFile, 'utf8', (err, data) => {
