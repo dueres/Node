@@ -7,6 +7,8 @@ const path = require('path');
 
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Enabling cors
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -14,6 +16,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
 });
+
 
 // API endpoints for users
 const usersDataFile = 'users.json';
@@ -56,7 +59,7 @@ app.post('/api/users', (req, res) => {
 });
 
 // JSON file to store programmers data data
-const programmersdataFile = 'programmers.json';
+const programmersdataFile = 'programmers.json'; 
 
 // API endpoints for programmers
 app.get('/api/programmersresource', (req, res) => {
@@ -70,6 +73,7 @@ app.get('/api/programmersresource', (req, res) => {
     res.json(programmers);
   });
 });
+
 
 app.post('/api/programmersresource', (req, res) => {
   const newAssignment = req.body;
@@ -95,6 +99,7 @@ app.post('/api/programmersresource', (req, res) => {
     });
   });
 });
+
 
 // API endpoints for departments
 const departmentsDataFile = 'departments.json';
@@ -135,5 +140,14 @@ app.post('/api/departments', (req, res) => {
   });
 });
 
-// Export the Express app for serverless deployment
-module.exports = app;
+// Serve the index.html page on the homepage
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+
+// Starting the server
+// app.listen(process.env.PORT || 3000, () => {
+//   console.log('App listening on port 3000!');
+// });
