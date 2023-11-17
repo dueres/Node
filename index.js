@@ -17,7 +17,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API endpoints for users
 const usersDataFile = './data/users.json';
